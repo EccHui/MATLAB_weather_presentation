@@ -1,5 +1,5 @@
 # MATLAB_weather_presentation
-Code for MATLAB present weather.
+Code for MATLAB present weather.\n
 Get wheather information with user's ip address
 Using Baidu API, require JSONlib v1.2
 Much information of weather is unused
