@@ -1,6 +1,5 @@
 Weather Presentation with MATLAB
 ----
-# MATLAB_weather_presentation
 Code for MATLAB present weather.<br>
 Get wheather information with user's ip address.<br>
 Using Baidu API, require JSONlib v1.2.<br>
