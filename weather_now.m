@@ -1,18 +1,18 @@
-% Get wheather information with user's ip address
-% Using Baidu API, require JSONlib v1.2
-% Much information of weather is unused
+% Get wheather information with user's ip address.
+% Using Baidu API, require JSONlib v1.2.
+% Much information of weather is unused.
 % Ecc - 05/11/16
 % function: class, regexp, strcmp
 
 clear;
 flag = 0;
 ak = 'MpqsTie8vuSASCcHGGurk1EG4ZkAOkdl';
-pm_format = {0,'Ò»¼¶','ÓÅ','ÂÌÉ«';
-             51,'¶ş¼¶','Á¼','»ÆÉ«';
-             101,'Èı¼¶','Çá¶ÈÎÛÈ¾','³ÈÉ«';
-             151,'ËÄ¼¶','ÖĞ¶ÈÎÛÈ¾','ºìÉ«';
-             201,'Îå¼¶','ÖØ¶ÈÎÛÈ¾','×ÏÉ«';
-             301,'Áù¼¶','ÑÏÖØÎÛÈ¾','ºÖºìÉ«'};
+pm_format = {0,'ä¸€çº§','ä¼˜','ç»¿è‰²';
+             51,'äºŒçº§','è‰¯','é»„è‰²';
+             101,'ä¸‰çº§','è½»åº¦æ±¡æŸ“','æ©™è‰²';
+             151,'å››çº§','ä¸­åº¦æ±¡æŸ“','çº¢è‰²';
+             201,'äº”çº§','é‡åº¦æ±¡æŸ“','ç´«è‰²';
+             301,'å…­çº§','ä¸¥é‡æ±¡æŸ“','è¤çº¢è‰²'};
 url_loc = ['http://api.map.baidu.com/location/ip?ak=' ak '&coor=bd09ll'];
 loc = webread(url_loc);
 location = loc.content.address(1:end-1);
@@ -38,12 +38,12 @@ if strcmp(data.status,'success')
     if flag == 0
         polution = pm_format{6,3}; 
     end
-    fprintf('µØµã£º  %s\n',city);
-    fprintf('ÈÕÆÚ£º  %s\n',date);
-    fprintf('ÌìÆø£º  %s\n',weather);
-    fprintf('·ç¼¶£º  %s\n',wind);
-    fprintf('ÎÂ¶È£º  %s\n',temperature);
-    fprintf('pm2.5£º %s - %s\n',pm25,polution);
+    fprintf('åœ°ç‚¹ï¼š  %s\n',city);
+    fprintf('æ—¥æœŸï¼š  %s\n',date);
+    fprintf('å¤©æ°”ï¼š  %s\n',weather);
+    fprintf('é£çº§ï¼š  %s\n',wind);
+    fprintf('æ¸©åº¦ï¼š  %s\n',temperature);
+    fprintf('pm2.5ï¼š %s - %s\n',pm25,polution);
 else
     error('Server is not available.');
 end
